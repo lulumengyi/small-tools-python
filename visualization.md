@@ -44,6 +44,7 @@ fig.show()
 <img width="686" alt="image" src="https://github.com/lulumengyi/small-tools-python/assets/32284131/0ec1f12c-6c92-4ac3-b990-e4801d876d7b">
 
 
+
 7万条餐饮数据分析
 fig = px.bar(df2_top3,x="行政区",y="店铺数量",color="类别",text="店铺数量")
 fig.update_layout(title="不同行政区下不同类别的店铺数量对比")
@@ -51,10 +52,13 @@ fig.show()
 复制
 
 不同店铺下的点评数量对比：
-
+![1441701705875_ pic](https://github.com/lulumengyi/small-tools-python/assets/32284131/0e860a90-66f6-4f8b-95f7-5a8019a634ff)
 
 4个指标的关系：口味、环境、服务和人均消费
 
+![1451701705891_ pic](https://github.com/lulumengyi/small-tools-python/assets/32284131/6fa15eb1-11b0-401f-a6f5-cdba5e0be81b)
+
+![1461701705902_ pic](https://github.com/lulumengyi/small-tools-python/assets/32284131/06ac3633-c9f0-40cf-98fb-8b9c6d486d16)
 
 基于python实现RFM模型（用户画像）
 RFM模型是客户关系管理（CRM）中的一种重要分析模型，用于衡量客户价值和客户创利能力。该模型通过以下三个指标来评估客户的价值和发展潜力：
@@ -72,8 +76,7 @@ frequency_data.rename(columns={'OrderID': 'Frequency'}, inplace=True)
 
 monetary_data = data.groupby('CustomerID')['TransactionAmount'].sum().reset_index()
 monetary_data.rename(columns={'TransactionAmount': 'MonetaryValue'}, inplace=True)
-复制
-可视化
+
 可视化主要是讲解了matplotlib的3D图和统计相关图形的绘制和plotly_express的入门：
 
 (1) matplotlib的3D图形绘制
@@ -95,7 +98,7 @@ y = np.cos(z) + 0.1 * np.random.randn(200)
 ax.scatter3D(x, y, z, c=z, cmap='Greens')
 
 plt.show()
-复制
+![1501701705975_ pic](https://github.com/lulumengyi/small-tools-python/assets/32284131/a2fe8132-cc9e-4037-9261-1be9902bdb06)
 
 plt.style.use('fivethirtyeight')
 fig = plt.figure(figsize=(14,8))
@@ -116,11 +119,13 @@ ax.set_title('surface')
 #        zticklabels=[])
 
 plt.show()
-复制
+
+![1481701705937_ pic](https://github.com/lulumengyi/small-tools-python/assets/32284131/afc06007-8b81-4ac5-8e8c-67cc0dc2944b)
 
 (2) 统计图形绘制
 
 绘制箱型图：
+![Uploading 1501701705975_.pic.jpg…]()
 
 np.random.seed(10)
 D = np.random.normal((3, 5, 4), (1.25, 1.00, 1.25), (100, 3))
@@ -153,7 +158,7 @@ for i in np.arange(2):
                     ylim=(0, 8), yticks=np.arange(0, 9))
 
 plt.show()
-复制
+
 
 绘制栅格图：
 
@@ -168,6 +173,7 @@ fig, ax = plt.subplots(2, 2, figsize=(9,6), constrained_layout=True)
 # 默认栅格图-水平方向
 ax[0,0].eventplot(D)
 ax[0,0].set_title('default')
+
 
 # 垂直方向
 ax[0,1].eventplot(D, 
@@ -193,21 +199,18 @@ plt.show()
 复制
 
 (3) plotly_express入门      使用plotly_express如何快速绘制散点图、散点矩阵图、气泡图、箱型图、小提琴图、经验累积分布图、旭日图等
-
-
-
-
-
+![1491701705963_ pic](https://github.com/lulumengyi/small-tools-python/assets/32284131/1d9ca6bf-4773-4b79-a5ac-e0c0c28320c8)
 
 
 机器学习
 基于机器学习的Titanic生存预测
 目标变量分析：
-
-
-
 相关性分析：
+![1511701705984_ pic](https://github.com/lulumengyi/small-tools-python/assets/32284131/262b672b-6415-467e-9d24-ea5a1606be61)
 
+![1521701705991_ pic](https://github.com/lulumengyi/small-tools-python/assets/32284131/fb493c7e-bedf-4783-a6dc-4fc8f4f48e09)
+![1531701705997_ pic](https://github.com/lulumengyi/small-tools-python/assets/32284131/3a50add8-fccc-4c4f-a8d7-06c70d3a0330)
+![1541701706003_ pic](https://github.com/lulumengyi/small-tools-python/assets/32284131/81f53dbe-cb3a-4ba5-b3d0-083dcb430e9a)
 
 基于树模型的特征重要性排序代码：
 
@@ -240,7 +243,10 @@ ax[1,1].set_title('Feature Importance in XgBoost')
 plt.show()      
 复制
 不同模型对比：
+![1551701706009_ pic](https://github.com/lulumengyi/small-tools-python/assets/32284131/aa69eb1b-f84d-447a-a7f5-8c453a70a8d2)
 
+![1561701706016_ pic](https://github.com/lulumengyi/small-tools-python/assets/32284131/9e2cde92-9464-4e00-b28f-9d4fff426094)
+![1571701706022_ pic](https://github.com/lulumengyi/small-tools-python/assets/32284131/5851baa1-0c9c-4b49-8e05-62d5256661e8)
 
 基于KNN算法的iris数据集分类
 特征分布情况：
@@ -257,7 +263,8 @@ pd.plotting.scatter_matrix(X_train,
 plt.show()
 复制
 
-混淆矩阵：
+混淆矩阵：![1611701706052_ pic](https://github.com/lulumengyi/small-tools-python/assets/32284131/26cd9262-7135-4deb-a4bd-8b3f89d1537d)
+
 
 from sklearn.metrics import classification_report,f1_score,accuracy_score,confusion_matrix
 sns.heatmap(confusion_matrix(y_pred, y_test), annot=True)
@@ -272,6 +279,7 @@ prediction = knn.predict(x_new)
 复制
 基于随机森林算法的员工流失预测
 不同教育背景下的人群对比：
+![1621701706061_ pic](https://github.com/lulumengyi/small-tools-python/assets/32284131/5ed92b03-fec5-4172-b099-8ef69a7de599)
 
 fig = go.Figure(data=[go.Pie(
     labels=attrition_by['EducationField'],
@@ -296,7 +304,9 @@ fig.show()
 复制
 
 年龄和月收入关系：
+![1661701706089_ pic](https://github.com/lulumengyi/small-tools-python/assets/32284131/7c1e0a2c-0303-47ed-801a-8882212d3d90)
 
+![1631701706068_ pic](https://github.com/lulumengyi/small-tools-python/assets/32284131/2c919032-a75e-488f-b25e-51e70b7dd985)
 
 类型编码：
 
@@ -315,6 +325,7 @@ df['OverTime'] = le.fit_transform(df['OverTime'])
 复制
 相关性分析：
 
+![1671701706095_ pic](https://github.com/lulumengyi/small-tools-python/assets/32284131/3d25e29c-931d-4128-b9ae-d3079bb917ef)
 
 基于LSTM的股价预测
 LSTM网络模型搭建：
@@ -377,9 +388,12 @@ for i in range(k):
 时序预测
 基于AMIRA的销量预测
 自相关性图：
+![1681701706110_ pic](https://github.com/lulumengyi/small-tools-python/assets/32284131/97ee0eb0-978c-47e6-b8e4-4cf7df43386b)
 
+![1641701706076_ pic](https://github.com/lulumengyi/small-tools-python/assets/32284131/f47d8493-43ba-452b-8049-14058d849b23)
 
 偏自相关性：
+![1691701706116_ pic](https://github.com/lulumengyi/small-tools-python/assets/32284131/6f29d3d7-3409-42b1-8c59-2c45182e1590)
 
 
 预测未来10天
@@ -391,14 +405,18 @@ model = sm.tsa.statespace.SARIMAX(df['Revenue'],
 model = model.fit()
 model.summary()
 ten_predictions = model.predict(len(df), len(df) + 10)  # 预测10天
-复制
+复制![1701701706123_ pic](https://github.com/lulumengyi/small-tools-python/assets/32284131/2d31bebe-c4b9-4ec0-acdc-3d3213a8a2ec)
+
 
 基于prophet的天气预测
 特征间的关系：
+![1711701706128_ pic](https://github.com/lulumengyi/small-tools-python/assets/32284131/836edcc3-e8a3-43d6-b3dd-3d508b427285)
 
 
 
 预测效果：
+![1721701706134_ pic](https://github.com/lulumengyi/small-tools-python/assets/32284131/76435cc2-4f07-4a2f-8b4f-8ebab52a05e0)
+![1731701706139_ pic](https://github.com/lulumengyi/small-tools-python/assets/32284131/0952d8f9-43b7-40a3-843d-2825b44c0d8c)
 
 
 其他案例
